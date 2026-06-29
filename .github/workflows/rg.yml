@@ -16,5 +16,5 @@ jobs:
       - name: Create Resource Group
         run: |
             az group create \
-              --name dev-rg1 \
-              --location eastus
+              --name veenu11-rg1 \
+              --location westus
