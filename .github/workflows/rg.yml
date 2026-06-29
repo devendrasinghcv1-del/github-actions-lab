@@ -1,0 +1,24 @@
+name: Create Azure Resource Group
+
+on:
+  workflow_dispatch:
+
+jobs:
+  create-rg:
+    runs-on: ubuntu-latest
+     
+    steps:
+      - name: Azure Login
+        uses: azure/login@v2
+
+        with:
+          client-id: "84debe48-f493-4a21-a8fa-3d6e9b571308"
+          tenant-id: "ca44b514-8adc-4288-af0f-c551f065a2af"
+          subscription-id: "65879a1d-8a71-47e6-af69-9f811ecad89e"
+          client-secret: "5tA8Q~xOZ49LUkaW.C7vJ3gJ3FtvIq.CWcSxYao2"
+
+      - name: Create Resource Group
+        run: |
+            az group create \
+              --name dev-rg1 \
+              --location eastus
